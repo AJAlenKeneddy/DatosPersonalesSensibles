@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Datos Personales y Sensibles en un Instituto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .datos-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+            .btn:hover {
+                background-color: #2980b9;
+            }
+
+        /* Estilos del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>Datos Personales y Sensibles en un Instituto</h1>
+
+    <!-- Sección de Datos Personales -->
+    <div class="datos-section">
+        <h2>Ejemplos de Datos Personales</h2>
+        <ul>
+            <li>Nombre completo del estudiante o empleado.</li>
+            <li>Número de identificación (DNI, código de matrícula).</li>
+            <li>Correo electrónico institucional o personal.</li>
+            <li>Dirección de domicilio.</li>
+            <li>Número de teléfono.</li>
+            <li>Fecha de nacimiento.</li>
+        </ul>
+        <button class="btn" id="btnDatosPersonales">Más información</button>
+    </div>
+
+    <!-- Sección de Datos Sensibles -->
+    <div class="datos-section">
+        <h2>Ejemplos de Datos Sensibles</h2>
+        <ul>
+            <li>Historial médico (alergias, discapacidades).</li>
+            <li>Orientación religiosa.</li>
+            <li>Opiniones o afiliaciones políticas.</li>
+            <li>Datos biométricos (huellas dactilares).</li>
+        </ul>
+        <button class="btn" id="btnDatosSensibles">Más información</button>
+    </div>
+
+    <!-- Modal para Datos Personales -->
+    <div id="modalDatosPersonales" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDatosPersonales">&times;</span>
+            <h2>¿Qué son los datos personales?</h2>
+            <p>Los <strong>datos personales</strong> son aquellos que permiten identificar a una persona de manera directa o indirecta. En un instituto, estos datos incluyen la información básica del estudiante o empleado, como su nombre, número de identificación, y contacto personal.</p>
+        </div>
+    </div>
+
+    <!-- Modal para Datos Sensibles -->
+    <div id="modalDatosSensibles" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDatosSensibles">&times;</span>
+            <h2>¿Qué son los datos sensibles?</h2>
+            <p>Los <strong>datos sensibles</strong> son aquellos que revelan información íntima o delicada de una persona. Estos incluyen el historial médico, creencias religiosas, afiliaciones políticas, y datos biométricos que se deben tratar con especial protección en un entorno institucional.</p>
+        </div>
+    </div>
+
+    <script>// Obtener los elementos del DOM
+        var modalDatosPersonales = document.getElementById("modalDatosPersonales");
+        var modalDatosSensibles = document.getElementById("modalDatosSensibles");
+        var btnDatosPersonales = document.getElementById("btnDatosPersonales");
+        var btnDatosSensibles = document.getElementById("btnDatosSensibles");
+        var closeDatosPersonales = document.getElementById("closeDatosPersonales");
+        var closeDatosSensibles = document.getElementById("closeDatosSensibles");
+
+        // Mostrar el modal de datos personales
+        btnDatosPersonales.onclick = function() {
+            modalDatosPersonales.style.display = "block";
+        }
+
+        // Cerrar el modal de datos personales
+        closeDatosPersonales.onclick = function() {
+            modalDatosPersonales.style.display = "none";
+        }
+
+        // Mostrar el modal de datos sensibles
+        btnDatosSensibles.onclick = function() {
+            modalDatosSensibles.style.display = "block";
+        }
+
+        // Cerrar el modal de datos sensibles
+        closeDatosSensibles.onclick = function() {
+            modalDatosSensibles.style.display = "none";
+        }
+
+        // Cerrar los modales al hacer clic fuera de ellos
+        window.onclick = function(event) {
+            if (event.target == modalDatosPersonales) {
+                modalDatosPersonales.style.display = "none";
+            }
+            if (event.target == modalDatosSensibles) {
+                modalDatosSensibles.style.display = "none";
+            }
+        }</script>
+
+</body>
+</html>
